@@ -73,14 +73,14 @@ export function PricingSection() {
   const [billing, setBilling] = useState<BillingCycle>("annual");
 
   return (
-    <section className="py-24" id="pricing">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-24 lg:py-32" id="pricing">
+      <div className="max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-6">
         {/* Header */}
         <AnimatedSection className="text-center mb-12">
           <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
             Pricing
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mt-4">
             Simple, Transparent <span className="text-primary">Pricing</span>
           </h2>
           <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
@@ -116,7 +116,7 @@ export function PricingSection() {
         </AnimatedSection>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {PLANS.map((plan, i) => {
             const price = billing === "monthly" ? plan.monthlyPrice : plan.annualPrice;
 

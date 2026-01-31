@@ -24,8 +24,8 @@ export function HeroSection() {
       {/* Threads animated background */}
       <ThreadsBackground />
 
-      <div className="max-w-5xl mx-auto px-6 relative">
-        <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-6 relative">
+        <div className="max-w-3xl lg:max-w-4xl mx-auto text-center">
           {/* Urgency Badge */}
           <AnimatedSection animation="fade" delay={0}>
             <div className="mb-8">
@@ -37,7 +37,7 @@ export function HeroSection() {
           <AnimatedSection animation="fade-up" delay={150}>
             <h1
               className={cn(
-                "text-4xl sm:text-5xl md:text-6xl",
+                "text-4xl sm:text-5xl md:text-6xl lg:text-7xl",
                 "font-bold tracking-tight",
                 "leading-[1.1]",
                 "mb-6"
@@ -52,7 +52,7 @@ export function HeroSection() {
           <AnimatedSection animation="fade-up" delay={300}>
             <p
               className={cn(
-                "text-lg sm:text-xl",
+                "text-lg sm:text-xl lg:text-2xl",
                 "text-muted-foreground",
                 "max-w-2xl mx-auto",
                 "mb-8"

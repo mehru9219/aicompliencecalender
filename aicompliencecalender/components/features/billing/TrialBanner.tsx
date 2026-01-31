@@ -82,7 +82,7 @@ export function TrialBanner({
           {onUpgrade ? (
             "Upgrade Now"
           ) : (
-            <Link href="/settings/billing">Upgrade Now</Link>
+            <Link href="/dashboard/settings/billing">Upgrade Now</Link>
           )}
         </Button>
 

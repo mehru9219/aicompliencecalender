@@ -93,14 +93,14 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-muted/10">
-      <div className="max-w-3xl mx-auto px-6">
+    <section className="py-24 lg:py-32 bg-muted/10">
+      <div className="max-w-3xl lg:max-w-4xl mx-auto px-6">
         {/* Header */}
         <AnimatedSection className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
             FAQ
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mt-4">
             Frequently Asked <span className="text-primary">Questions</span>
           </h2>
         </AnimatedSection>

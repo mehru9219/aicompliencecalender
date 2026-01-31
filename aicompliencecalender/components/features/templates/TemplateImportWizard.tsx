@@ -276,7 +276,7 @@ export function TemplateImportWizard({
                 </p>
               </div>
               <div className="pt-4">
-                <Link href="/deadlines">
+                <Link href="/dashboard/deadlines">
                   <Button>View Your Deadlines</Button>
                 </Link>
               </div>

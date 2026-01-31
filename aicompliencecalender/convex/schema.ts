@@ -6,6 +6,7 @@ export default defineSchema({
     name: v.string(),
     industry: v.string(),
     ownerId: v.string(),
+    clerkOrgId: v.optional(v.string()), // Maps to Clerk Organization ID
     settings: v.object({
       timezone: v.optional(v.string()),
       dueSoonDays: v.optional(v.number()),
@@ -14,7 +15,9 @@ export default defineSchema({
       ssoOnly: v.optional(v.boolean()),
     }),
     createdAt: v.number(),
-  }).index("by_owner", ["ownerId"]),
+  })
+    .index("by_owner", ["ownerId"])
+    .index("by_clerk_org", ["clerkOrgId"]),
 
   // User-Organization membership junction table (supports multi-org future)
   user_organizations: defineTable({

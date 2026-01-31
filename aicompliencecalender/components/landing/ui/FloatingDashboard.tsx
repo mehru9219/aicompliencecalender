@@ -15,7 +15,7 @@ interface FloatingDashboardProps {
 
 export function FloatingDashboard({ className }: FloatingDashboardProps) {
   return (
-    <div className={cn("relative w-full max-w-3xl mx-auto", className)}>
+    <div className={cn("relative w-full max-w-3xl lg:max-w-4xl mx-auto", className)}>
       {/* Main dashboard card */}
       <div
         className={cn(

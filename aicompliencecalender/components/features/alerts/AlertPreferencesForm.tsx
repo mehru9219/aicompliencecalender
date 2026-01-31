@@ -107,16 +107,16 @@ export function AlertPreferencesForm({
     <form onSubmit={handleSubmit} className="space-y-8">
       {/* Channel Preferences by Urgency */}
       <div>
-        <h3 className="text-lg font-medium text-gray-900 mb-4">
+        <h3 className="text-lg font-medium text-foreground mb-4">
           Notification Channels by Urgency
         </h3>
         <div className="space-y-4">
           {URGENCY_LEVELS.map((urgency) => (
             <div
               key={urgency}
-              className="border border-gray-200 rounded-lg p-4"
+              className="border border-border rounded-lg p-4"
             >
-              <div className="font-medium text-gray-700 mb-2">
+              <div className="font-medium text-foreground mb-2">
                 {ALERT_URGENCIES[urgency]}
               </div>
               <div className="flex flex-wrap gap-2">
@@ -126,9 +126,9 @@ export function AlertPreferencesForm({
                       type="checkbox"
                       checked={channels[urgency].includes(channel)}
                       onChange={() => toggleChannel(urgency, channel)}
-                      className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      className="rounded border-input text-primary focus:ring-primary"
                     />
-                    <span className="ml-2 text-sm text-gray-600">
+                    <span className="ml-2 text-sm text-muted-foreground">
                       {ALERT_CHANNELS[channel]}
                     </span>
                   </label>
@@ -141,7 +141,7 @@ export function AlertPreferencesForm({
 
       {/* Alert Days */}
       <div>
-        <h3 className="text-lg font-medium text-gray-900 mb-4">
+        <h3 className="text-lg font-medium text-foreground mb-4">
           Alert Schedule (Days Before Deadline)
         </h3>
         <div className="flex flex-wrap gap-2">
@@ -152,8 +152,8 @@ export function AlertPreferencesForm({
               onClick={() => toggleAlertDay(day)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 alertDays.includes(day)
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
             >
               {day === 0 ? "Due Date" : `${day} days`}
@@ -165,7 +165,7 @@ export function AlertPreferencesForm({
       {/* Contact Info */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-foreground mb-1">
             Phone Number (for SMS)
           </label>
           <input
@@ -173,11 +173,11 @@ export function AlertPreferencesForm({
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="+1234567890"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-foreground mb-1">
             Email Override (optional)
           </label>
           <input
@@ -185,7 +185,7 @@ export function AlertPreferencesForm({
             value={emailOverride}
             onChange={(e) => setEmailOverride(e.target.value)}
             placeholder="alerts@example.com"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
           />
         </div>
       </div>
@@ -198,18 +198,18 @@ export function AlertPreferencesForm({
             id="escalation"
             checked={escalationEnabled}
             onChange={(e) => setEscalationEnabled(e.target.checked)}
-            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            className="rounded border-input text-primary focus:ring-primary"
           />
           <label
             htmlFor="escalation"
-            className="ml-2 text-sm font-medium text-gray-700"
+            className="ml-2 text-sm font-medium text-foreground"
           >
             Enable escalation for failed alerts
           </label>
         </div>
         {escalationEnabled && (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-foreground mb-1">
               Escalation Contacts (user IDs, one per line)
             </label>
             <textarea
@@ -220,7 +220,7 @@ export function AlertPreferencesForm({
                 )
               }
               rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               placeholder="user_id_1&#10;user_id_2"
             />
           </div>
@@ -232,7 +232,7 @@ export function AlertPreferencesForm({
         <button
           type="submit"
           disabled={isSaving}
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSaving ? "Saving..." : "Save Preferences"}
         </button>

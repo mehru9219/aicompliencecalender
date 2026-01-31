@@ -2,8 +2,67 @@
  * Organization queries and mutations.
  */
 
-import { query } from "./_generated/server";
+import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
+
+/**
+ * Sync organization from Clerk.
+ * Creates new org if clerkOrgId doesn't exist, returns existing if it does.
+ */
+export const syncFromClerk = mutation({
+  args: {
+    clerkOrgId: v.string(),
+    name: v.string(),
+    userId: v.string(),
+  },
+  returns: v.id("organizations"),
+  handler: async (ctx, args) => {
+    // Check if org already exists by clerkOrgId
+    const existing = await ctx.db
+      .query("organizations")
+      .withIndex("by_clerk_org", (q) => q.eq("clerkOrgId", args.clerkOrgId))
+      .first();
+
+    if (existing) {
+      return existing._id;
+    }
+
+    // Create new organization
+    const orgId = await ctx.db.insert("organizations", {
+      name: args.name,
+      industry: "other",
+      ownerId: args.userId,
+      clerkOrgId: args.clerkOrgId,
+      settings: {},
+      createdAt: Date.now(),
+    });
+
+    // Create user_organizations membership as owner
+    await ctx.db.insert("user_organizations", {
+      userId: args.userId,
+      orgId,
+      role: "owner",
+      joinedAt: Date.now(),
+    });
+
+    return orgId;
+  },
+});
+
+/**
+ * Get organization by Clerk org ID.
+ */
+export const getByClerkId = query({
+  args: { clerkOrgId: v.string() },
+  returns: v.union(v.id("organizations"), v.null()),
+  handler: async (ctx, args) => {
+    const org = await ctx.db
+      .query("organizations")
+      .withIndex("by_clerk_org", (q) => q.eq("clerkOrgId", args.clerkOrgId))
+      .first();
+    return org?._id ?? null;
+  },
+});
 
 /**
  * List organizations a user belongs to.

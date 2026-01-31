@@ -8,13 +8,13 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function FinalCTASection() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Clean gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-muted/20 to-primary/5" />
 
-      <div className="max-w-3xl mx-auto px-6 relative">
+      <div className="max-w-3xl lg:max-w-4xl mx-auto px-6 relative">
         <AnimatedSection className="text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             Ready to Never Miss a{" "}
             <span className="text-primary">Deadline</span> Again?
           </h2>

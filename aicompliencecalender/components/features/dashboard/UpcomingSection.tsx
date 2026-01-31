@@ -58,7 +58,7 @@ export function UpcomingSection({
             {deadlines.length}
           </span>
         </CardTitle>
-        <Link href="/deadlines?filter=upcoming">
+        <Link href="/dashboard/deadlines?filter=upcoming">
           <Button variant="ghost" size="sm" className="text-xs">
             View all
             <ChevronRight className="h-4 w-4 ml-1" />
@@ -75,7 +75,7 @@ export function UpcomingSection({
           />
         ))}
         {hasMore && (
-          <Link href="/deadlines?filter=upcoming">
+          <Link href="/dashboard/deadlines?filter=upcoming">
             <Button variant="outline" className="w-full mt-2">
               View {deadlines.length - maxItems} more
               <ChevronRight className="h-4 w-4 ml-1" />

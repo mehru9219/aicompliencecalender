@@ -67,22 +67,22 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
   {
     id: "first_deadline",
     label: "Create your first deadline",
-    href: "/deadlines/new",
+    href: "/dashboard/deadlines/new",
   },
   {
     id: "alerts_configured",
     label: "Configure alert preferences",
-    href: "/settings/alerts",
+    href: "/dashboard/settings/alerts",
   },
   {
     id: "team_invited",
     label: "Invite a team member",
-    href: "/settings/team",
+    href: "/dashboard/settings/team",
   },
   {
     id: "first_completion",
     label: "Complete a deadline",
-    href: "/deadlines",
+    href: "/dashboard/deadlines",
   },
 ];
 

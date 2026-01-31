@@ -22,25 +22,25 @@ export function QuickActionsBar({
     <Card className={className}>
       <CardContent className="py-4">
         <div className="flex flex-wrap items-center justify-center gap-3">
-          <Link href="/deadlines/new">
+          <Link href="/dashboard/deadlines/new">
             <Button variant="outline" className="gap-2">
               <Plus className="h-4 w-4" />
               New Deadline
             </Button>
           </Link>
-          <Link href="/documents?action=upload">
+          <Link href="/dashboard/documents?action=upload">
             <Button variant="outline" className="gap-2">
               <Upload className="h-4 w-4" />
               Upload Document
             </Button>
           </Link>
-          <Link href="/calendar">
+          <Link href="/dashboard/calendar">
             <Button variant="outline" className="gap-2">
               <Calendar className="h-4 w-4" />
               View Calendar
             </Button>
           </Link>
-          <Link href="/templates">
+          <Link href="/dashboard/templates">
             <Button variant="outline" className="gap-2">
               <FileText className="h-4 w-4" />
               Browse Templates

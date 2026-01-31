@@ -80,7 +80,7 @@ export function OnboardingChecklist({
   };
 
   return (
-    <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-white">
+    <Card className="border-primary/20 bg-card">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CardHeader className="pb-2">
           <div className="flex items-center justify-between">

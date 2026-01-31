@@ -108,7 +108,7 @@ function FeatureBlock({ feature, index }: { feature: Feature; index: number }) {
             {feature.title}
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
             {feature.headline}
           </h3>
 
@@ -151,14 +151,14 @@ function FeatureBlock({ feature, index }: { feature: Feature; index: number }) {
 
 export function SolutionSection() {
   return (
-    <section className="py-24">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-24 lg:py-32">
+      <div className="max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-6">
         {/* Header */}
         <AnimatedSection className="text-center mb-20">
           <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
             The Solution
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mt-4">
             One Platform.{" "}
             <span className="text-primary">Zero Missed Deadlines.</span>
           </h2>

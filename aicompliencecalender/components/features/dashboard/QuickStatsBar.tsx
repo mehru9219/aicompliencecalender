@@ -20,19 +20,19 @@ export function QuickStatsBar({ stats, className }: QuickStatsBarProps) {
         icon={Clock}
         label="Active Deadlines"
         value={stats.totalActive}
-        href="/deadlines"
+        href="/dashboard/deadlines"
       />
       <StatCard
         icon={CheckCircle}
         label="Completed This Month"
         value={stats.completedThisMonth}
-        href="/deadlines?filter=completed"
+        href="/dashboard/deadlines?filter=completed"
       />
       <StatCard
         icon={FileText}
         label="Documents Stored"
         value={stats.documentsStored}
-        href="/documents"
+        href="/dashboard/documents"
       />
       <StatCard
         icon={TrendingUp}

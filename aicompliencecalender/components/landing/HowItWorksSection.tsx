@@ -30,14 +30,14 @@ const STEPS = [
 
 export function HowItWorksSection() {
   return (
-    <section className="py-24 bg-muted/10">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-24 lg:py-32 bg-muted/10">
+      <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto px-6">
         {/* Header */}
         <AnimatedSection className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
             How It Works
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mt-4">
             Get Started in <span className="text-primary">10 Minutes</span>
           </h2>
         </AnimatedSection>

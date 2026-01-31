@@ -26,7 +26,7 @@ export function Navigation() {
           : "bg-transparent"
       )}
     >
-      <div className="max-w-5xl mx-auto flex items-center justify-between h-16 px-6">
+      <div className="max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto flex items-center justify-between h-16 lg:h-18 px-6">
         <Link
           href="/"
           className="flex items-center gap-2 text-lg font-semibold tracking-tight"

@@ -71,10 +71,10 @@ describe("Onboarding Types", () => {
 
     it("has valid hrefs for navigation", () => {
       const hrefs = CHECKLIST_ITEMS.map((i) => i.href);
-      expect(hrefs).toContain("/deadlines/new");
-      expect(hrefs).toContain("/settings/alerts");
-      expect(hrefs).toContain("/settings/team");
-      expect(hrefs).toContain("/deadlines");
+      expect(hrefs).toContain("/dashboard/deadlines/new");
+      expect(hrefs).toContain("/dashboard/settings/alerts");
+      expect(hrefs).toContain("/dashboard/settings/team");
+      expect(hrefs).toContain("/dashboard/deadlines");
     });
   });
 
